@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask app</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header>
+                <h1>Sticky-Note Reader</h1>
+        </header>
+            <h3 class="centered">Sticky note upload </h3>
+            <div class="centered">
+                <input type="radio" id="trelloradio" name="inputmethod" value="trello" onclick=activate(this.value) checked>
+                <label for="trello">Trello board</label>
+                <input type="radio" id="textradio" name="inputmethod" value="text" onclick=activate(this.value)>
+                <label for="trello">Text output</label>
+            </div>
+            <form method="POST" enctype="multipart/form-data" id="trelloform" class="centered">
+                <a href="http://www.trello.com"><img src="{{ url_for('static', filename='css/trello.png') }}" alt="trello" width="100" align="middle"></a>
+                {{ trelloform.hidden_tag() }}
+                <p>
+                    {{ trelloform.name.label }}<br>
+                    {{ trelloform.name(width="80%") }}
+                </p>
+                <p>
+                    {{ trelloform.email.label }}<br>
+                    {{ trelloform.email(width="80%") }}
+                </p>
+                <p>
+                    {{ trelloform.boardname.label }}<br>
+                    {{ trelloform.boardname(width="80%") }}
+                </p>
+                <p>
+                    {{ trelloform.photo }}
+                    {% for error in trelloform.photo.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <div class="centered">
+                    <p>{{ trelloform.submit }}</p>
+                </div>
+            </form>
+            <form method="POST" enctype="multipart/form-data" id="textform" class="centered hiddenform">
+                {{ textform.hidden_tag() }}
+                <p>
+                    {{ textform.photo }}
+                    {% for error in textform.photo.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+                </p>
+                <div class="centered">
+                    <p>{{ textform.submit }}</p>
+                </div>
+            </form>
+        {% if url != None %}
+            <h2>Your trello board link is <a href="{{url}}">{{url}}</a></h2>
+        {% endif %}
+        {% if output != None %}
+            {% for line in output %}
+                <p>{{ line }}</p>
+            {% endfor %}
+        {% endif %}
+        <script>
+            var activate = function(form) {
+                if (form == "trello") {
+                    document.getElementById("trelloform").className = "centered"
+                    document.getElementById("textform").className = "centered hiddenform"
+                } else {
+                    document.getElementById("trelloform").className = "centered hiddenform"
+                    document.getElementById("textform").className = "centered"
+                }
+            }
+            
+        </script>
+    </body>
+</html>

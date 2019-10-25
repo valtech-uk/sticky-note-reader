@@ -1,0 +1,134 @@
+header {
+  color: #054A91;
+  width: 100%;
+  opacity: .9;
+  margin-bottom: 10px;
+  border-style: double;
+  position: relative;
+}
+
+header h1{
+  font-family: 'Impact', sans-serif;
+  font-size: 60pt;
+  color: #C6DBF0;
+  text-align: center;
+  position: relative;
+}
+
+body {
+  background-color: #122C34;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3em;
+  color: #E9F1F7;
+  position: relative;
+  height: 100%;
+  overflow: scroll;
+}
+
+img {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.button {
+  cursor: pointer;
+  background-color: white;
+  
+}
+
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10%;
+  left: 0;
+  top: 0;
+  color: black;
+  height: 100%; /* Full height */
+  width: 60%;
+  overflow: scroll; /* Enable scroll if needed */
+}
+/* Modal Content */
+.modal-content {
+  background-color: #5230ebbd;
+  margin: auto;
+  padding: 20px;
+  color: #d7d5e0;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+input[type="text" i] {
+  font-size: 1em;
+  height: 1em;
+}
+
+input[type="radio" i] {
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
+}
+
+input[type="submit" i] {
+  font-size: 1em;
+  -webkit-appearance: push-button;
+  user-select: none;
+  white-space: pre;
+  align-items: flex-start;
+  text-align: center;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 1px 6px;
+}
+
+input[type="file" i] + label{
+  background-color: blue;
+  cursor: pointer;
+  align-items: baseline;
+  color: black;
+  text-align: start !important;
+}
+
+input[type="file" i] {
+  font-size: 0.6em;
+  margin: 0 auto;
+}
+
+#trello_btn {
+  font-size: 30pt;
+  font-family: 'Impact', sans-serif;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+
+.centered {
+  text-align: center;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus{
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+.hiddenform {
+  display: none;
+}
